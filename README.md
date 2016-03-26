@@ -1,2 +1,2 @@
 # routeur.js
-A simple Javascript router.
+A simple Javascript/JQuery router.
