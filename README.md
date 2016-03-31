@@ -1,5 +1,5 @@
 # Routeur.js
-A simple client-side Javascript/JQuery router.
+A simple client-side Javascript/jQuery router.
 
 I created this project because I needed a navigation that maintains some parts of the page running when the user navigate through the website. The idea here is to use js/jquery to load the pages via ajax.
 
@@ -56,7 +56,7 @@ if (mobile === true) {
 ```
 
 ## Requires
-- Jquery
+- jQuery
 - History.js
 
 ## Similar projects
@@ -69,6 +69,6 @@ I put this project here because I want opinions about it. It was a small project
 
 Is there a better way to do that? Single page applications, like React?
 
-I used JQuery to buy time but the goal is to use only Javascript. And I'm thinking for months about using regex for checking urls, but I don't have the time right now to rebuild all this.
+I used jQuery to buy time but the goal is to use only Javascript. And I'm thinking for months about using regex for checking urls, but I don't have the time right now to rebuild all this.
 
 Thanks
