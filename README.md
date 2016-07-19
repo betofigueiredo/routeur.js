@@ -3,7 +3,7 @@ A simple client-side Javascript/jQuery router.
 
 I created this project because I needed a navigation that maintains some parts of the page running when the user navigate through the website. The idea here is to use js/jquery to load the pages via ajax.
 
-It was created without any planning, the features were emerging according to the needs of each project, so the code is not finished.
+It was created without any planning, the features were emerging according to the needs of each project, so the code is not finished yet.
 
 ## What can be done with this project
 - Maintains parts of the page running during navigation (music players, timesheets).
@@ -11,15 +11,14 @@ It was created without any planning, the features were emerging according to the
 - Create different types of navigations and a better experience on different devices. For example: on mobile we can navigate like apps, using tabs and maintaining the content loaded, but normal on desktop, loading the full page.
 
 ## Usage
-Init the router
-
+### Init the router
 ```javascript
 var router = new Routeur(allLinks = true, mobilePages = true, rootFolder = 'views');
 ```
 __mobilePages__ set __true__ is to create different pages for desktop and mobile.
 __rootFolder__ is where the pages are located.
 
-Set the *routes*
+### Set the routes
 ```javascript
 router.add({ url:'product/{id}/{tab}', phpFile: 'product-tab.php'});
 router.add({ url:'product/{id}', phpFile: 'product.php'});
@@ -30,7 +29,7 @@ router.add({ url:'*', phpFile: 'profile.php'});
 ```
 The last item, __*__ uses __id__ as parameter. The page used in the example, __profile.php__, will be loading like __profile.php?id={url_typed}__
 
-Start navigation
+### Start navigation
 ```javascript
 router.run();
 ```
