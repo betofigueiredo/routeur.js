@@ -87,6 +87,7 @@ function Routeur(allLinks, mobilePages, rootFolder) {
     this._rootFolder = (mobilePages) ? rootFolder+'/'+this._getViewsRoute() : rootFolder;
     this.updatePageLinks();
     this.setStateChange();
+    // this.navigateFirst();
 }
 
 (function() {
@@ -124,6 +125,7 @@ function Routeur(allLinks, mobilePages, rootFolder) {
 
             this._routes.push({ parameters: parametersArray, url: routeUrl, path: '/'+this._rootFolder+'/'+routePath });
             return this;
+
         },
 
         navigate: function navigate(route, url, isStateChange) {
@@ -144,11 +146,13 @@ function Routeur(allLinks, mobilePages, rootFolder) {
                         self._endLoading();
                         $('html, body').animate({ scrollTop: $('body').offset().top }, 300);
                         History.pushState(null, null, url);
+                        self.updatePageLinks();
                     } else {
                         $('#main').html(data);
                         self._endLoading();
                         $('html, body').animate({ scrollTop: $('body').offset().top }, 300);
                         $('body').attr('data-state', '0');
+                        self.updatePageLinks();
                     }
                 }
             });
@@ -312,8 +316,13 @@ function Routeur(allLinks, mobilePages, rootFolder) {
 
         _errorLoading404: function _errorLoading404() {
             console.log('404');
-        }
+        },
 
+        // First page load
+        run: function run() {
+            var locationPathname = window.location.pathname;
+            this._match(locationPathname, true);
+        }
 
     }
 

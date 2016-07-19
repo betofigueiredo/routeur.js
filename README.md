@@ -30,6 +30,14 @@ router.add({ url:'*', phpFile: 'profile.php'});
 ```
 The last item, __*__ uses __id__ as parameter. The page used in the example, __profile.php__, will be loading like __profile.php?id={url_typed}__
 
+Start navigation
+```javascript
+router.run();
+```
+
+## .htaccess
+Remember to point all pages to __index.php__ or to the default page you use.
+
 ## Requires
 - jQuery
 - History.js
